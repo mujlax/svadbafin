@@ -1,0 +1,71 @@
+.card {
+	background: var(--card);
+	color: var(--ink);
+	border: 3px solid #e6e6e6;
+	box-shadow: 0 6px 24px rgba(0,0,0,.35), 0 0 0 2px rgba(0,0,0,.05) inset;
+	border-radius: 8px;
+	padding: 16px;
+	margin: 24px 0;
+}
+
+.title {
+	font-family: 'Press Start 2P', monospace;
+	font-size: 28px;
+	color: #0f0f0f;
+	text-align: center;
+	text-shadow: 0 0 0 transparent, 0 0 18px rgba(255,62,166,.18);
+	margin: 16px 0 8px;
+}
+
+.subtitle {
+	font-weight: 700;
+	text-align: center;
+	margin: 8px 0 16px;
+}
+
+.ribbon {
+	background: linear-gradient(90deg, #f2f2f2, #e7e7e7);
+	color: #0f0f0f;
+	padding: 6px 12px;
+	border: 2px solid #dcdcdc;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	transform: none;
+	box-shadow: 0 2px 0 #000, 0 0 0 2px rgba(255,62,166,.25);
+}
+
+.shapeL, .shapeR {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+
+.shapeL {
+	background: conic-gradient(from 0deg, #ff3ea6, #6ae3ff, #ffe66a, #ff3ea6);
+	border-radius: 50%;
+	box-shadow: 0 0 10px rgba(255,62,166,.25);
+	animation: floaty 4s ease-in-out infinite;
+}
+
+.shapeR {
+	background: linear-gradient(135deg, #6ae3ff, #9b6bff);
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	box-shadow: 0 0 10px rgba(106,227,255,.25);
+	animation: floaty 4s ease-in-out infinite;
+	animation-delay: .4s;
+}
+
+@keyframes floaty {
+	0%, 100% { transform: translateY(0) rotate(0deg); }
+	50% { transform: translateY(-2px) rotate(6deg); }
+}
+
+@media (max-width: 768px) {
+	.title { font-size: 22px; }
+	.card { padding: 12px; margin: 16px 0; }
+}
+
+@media (max-width: 480px) {
+	.title { font-size: 18px; }
+}

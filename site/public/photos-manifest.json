@@ -1,0 +1,89 @@
+{
+  "default": {
+    "root": [],
+    "carousel": [],
+    "music": []
+  },
+  "ivan": {
+    "root": [],
+    "carousel": [
+      "/photos/ivan/carousel/photo_location.jpg",
+      "/photos/ivan/carousel/photo_location_2.jpg",
+      "/photos/ivan/carousel/photo_location_3.jpeg",
+      "/photos/ivan/carousel/photo_location_4.jpeg"
+    ],
+    "music": [
+      "/photos/ivan/music/GUMA, T-killah - От зари (zaycev.net).mp3"
+    ]
+  },
+  "vlad_and_Nastya": {
+    "root": [],
+    "carousel": [
+      "/photos/vlad_and_Nastya/carousel/photo_2023-04-09_13-47-28.jpg",
+      "/photos/vlad_and_Nastya/carousel/photo_2023-05-17_09-51-30.jpg",
+      "/photos/vlad_and_Nastya/carousel/photo_2023-08-22_21-02-40.jpg",
+      "/photos/vlad_and_Nastya/carousel/photo_2023-08-26_19-59-34.jpg",
+      "/photos/vlad_and_Nastya/carousel/photo_2023-08-26_19-59-36.jpg",
+      "/photos/vlad_and_Nastya/carousel/photo_2023-12-01_19-24-37.jpg",
+      "/photos/vlad_and_Nastya/carousel/video_2025-09-17_18-34-24.mp4",
+      "/photos/vlad_and_Nastya/carousel/vlad.jpg"
+    ],
+    "music": [
+      "/photos/vlad_and_Nastya/music/scally-milano-og-buda-bolshie-babki_108352742.mp3"
+    ]
+  },
+  "carousels": [
+    "/photos/default/carousels/photo_2024-02-23_21-28-41.jpg",
+    "/photos/default/carousels/photo_2024-03-24_12-10-33.jpg",
+    "/photos/default/carousels/photo_2024-05-19_14-37-57.jpg",
+    "/photos/default/carousels/photo_2024-05-19_14-38-12.jpg",
+    "/photos/default/carousels/photo_2024-05-19_14-38-36.jpg",
+    "/photos/default/carousels/photo_2024-05-19_18-40-49.jpg",
+    "/photos/default/carousels/photo_2024-06-14_10-39-40.jpg",
+    "/photos/default/carousels/photo_2024-06-22_21-43-04.jpg",
+    "/photos/default/carousels/photo_2024-07-12_21-12-08.jpg",
+    "/photos/default/carousels/photo_2025-01-06_13-38-21.jpg",
+    "/photos/default/carousels/photo_2025-01-08_18-53-59.jpg",
+    "/photos/default/carousels/photo_2025-03-15_18-19-49.jpg",
+    "/photos/default/carousels/photo_2025-03-16_17-05-23.jpg",
+    "/photos/default/carousels/photo_2025-04-14_20-45-06.jpg",
+    "/photos/default/carousels/photo_2025-04-17_11-51-41.jpg",
+    "/photos/default/carousels/photo_2025-04-26_13-48-39.jpg",
+    "/photos/default/carousels/photo_2025-05-03_21-32-38.jpg"
+  ],
+  "podvorye": [
+    "/photos/default/podvorye/2c7jjnkaqtwc6046872tfw94m2rd7xwe.webp",
+    "/photos/default/podvorye/70e547kllgig2w9bb4yxdwv5qmk0g45i.webp",
+    "/photos/default/podvorye/b9iss2jjykgy95b8dx9cce2s083y1kef.webp",
+    "/photos/default/podvorye/eb7m13nax4z0ucnqu3mi64rkv95cmaum.jpg",
+    "/photos/default/podvorye/ubeo7d0atub67skzk5zkqes6upxo222g.jpg",
+    "/photos/default/podvorye/xtvnzh5ciq78fcdkhdz9rge5wl26vmve.jpg"
+  ],
+  "instax": [
+    "/photos/default/instax_photo/photo_10_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_11_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_12_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_13_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_14_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_15_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_16_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_1_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_2_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_3_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_4_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_5_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_6_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_7_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_8_2025-09-17_19-16-33.jpg",
+    "/photos/default/instax_photo/photo_9_2025-09-17_19-16-33.jpg"
+  ],
+  "bg_photo": [
+    "/photos/default/bg_photo/image-from-rawpixel-id-5982996-png.png",
+    "/photos/default/bg_photo/image-from-rawpixel-id-6306135-png.png",
+    "/photos/default/bg_photo/image-from-rawpixel-id-6333004-png.png",
+    "/photos/default/bg_photo/image-from-rawpixel-id-6338463-png.png",
+    "/photos/default/bg_photo/image-from-rawpixel-id-6512210-png.png",
+    "/photos/default/bg_photo/vecteezy_isolated-pressed-and-dried-yellow-leaf-aesthetic-decorative_31401433.png",
+    "/photos/default/bg_photo/vecteezy_isolated-pressed-and-dried-yellow-wild-flower-with-leaves_31401438.png"
+  ]
+}

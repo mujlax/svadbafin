@@ -1,0 +1,39 @@
+.wrap {
+    text-align: center;
+    padding: 12px 0;
+}
+
+.title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.row {
+    display: inline-grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    align-items: end;
+}
+
+.cell {
+    background: #fff;
+    border: 2px solid #dcdcdc;
+    padding: 8px 10px;
+    box-shadow: 0 2px 0 #000, 0 0 0 2px rgba(255, 62, 166, .18);
+}
+
+.cell span {
+    display: block;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 18px;
+    color: #0f0f0f;
+}
+
+.cell label {
+    display: block;
+    font-size: 12px;
+    opacity: .7;
+    color: #0f0f0f;
+}

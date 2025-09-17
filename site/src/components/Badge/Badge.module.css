@@ -1,0 +1,10 @@
+.badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 10px;
+	background: #fff;
+	border: 2px solid #dcdcdc;
+	box-shadow: 0 2px 8px rgba(0,0,0,.2), 0 0 0 2px rgba(255,62,166,.18);
+	color: #0f0f0f;
+}

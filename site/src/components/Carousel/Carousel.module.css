@@ -1,0 +1,31 @@
+.viewport {
+	position: relative;
+	border: 4px groove #fff;
+	background: #000;
+	padding: 8px;
+	overflow: hidden;
+}
+
+.track {
+	display: inline-flex;
+	gap: 8px;
+	white-space: nowrap;
+}
+
+.viewport img, .media {
+	height: 180px;
+	width: auto;
+	border: 3px solid #e6e6e6;
+	box-shadow: 0 2px 10px rgba(0,0,0,.3);
+	background: #000;
+	filter: grayscale(0.3) contrast(1.05) brightness(0.95);
+}
+
+@media (max-width: 768px) {
+	.viewport img, .media { height: 140px; }
+}
+
+@media (max-width: 480px) {
+	.viewport { padding: 6px; }
+	.viewport img, .media { height: 110px; }
+}
