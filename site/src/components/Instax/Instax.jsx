@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Instax.module.css'
 
-export default function Instax({ photos = [], cameraSrc = '/photos/default/camera/instax.png', title = 'Секретный Instax — нажми, чтобы проявить кадр' }) {
+export default function Instax({ photos = [], cameraSrc = (import.meta?.env?.BASE_URL || '/') + 'photos/default/camera/instax.png', title = 'Секретный Instax — нажми, чтобы проявить кадр' }) {
 	const [remaining, setRemaining] = React.useState(photos)
 	const [displayed, setDisplayed] = React.useState([])
 	const [popped, setPopped] = React.useState(null)
@@ -57,7 +57,7 @@ export default function Instax({ photos = [], cameraSrc = '/photos/default/camer
 	return (
 		<div className={styles.wrap}>
             
-			<audio ref={shotRef} src="/photos/default/sound_instax/sound_shot.mp3" preload="auto" />
+			<audio ref={shotRef} src={(import.meta?.env?.BASE_URL || '/') + 'photos/default/sound_instax/sound_shot.mp3'} preload="auto" />
 			<div className={styles.title}>
 				{title}
 				<span className={styles.hintTop}>Нажми сюда 👉</span>

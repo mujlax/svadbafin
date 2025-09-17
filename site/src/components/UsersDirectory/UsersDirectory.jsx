@@ -4,8 +4,8 @@ import styles from './UsersDirectory.module.css'
 export default function UsersDirectory() {
 	const [users, setUsers] = React.useState([])
 	const [error, setError] = React.useState('')
-	React.useEffect(() => {
-        const base = import.meta.env.BASE_URL || '/'
+    React.useEffect(() => {
+        const base = import.meta.env.DEV ? '/' : (import.meta.env.BASE_URL || '/')
         fetch(`${base}users.json`)
 			.then((r) => r.json())
 			.then((data) => setUsers(Object.keys(data)))
@@ -22,8 +22,8 @@ export default function UsersDirectory() {
                         {users.map((u) => (
 							<div key={u} className={styles.user}>
 								<b>{u}</b>
-                                <a href={`${import.meta.env.BASE_URL}?u=${encodeURIComponent(u)}`}>Параметр: ?u={u}</a>
-                                <a href={`${import.meta.env.BASE_URL}${encodeURIComponent(u)}`}>Путь: /{u}</a>
+                                <a href={`${import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}?u=${encodeURIComponent(u)}`}>Параметр: ?u={u}</a>
+                                <a href={`${import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}${encodeURIComponent(u)}`}>Путь: /{u}</a>
 							</div>
 						))}
 					</div>

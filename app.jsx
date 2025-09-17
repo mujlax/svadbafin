@@ -1,28 +1,6 @@
 /* global React, ReactDOM */
 
-const IMAGES = [
-	'https://i.imgur.com/6rLwW.gif',
-	'https://i.imgur.com/8sJg5.gif',
-	'https://i.imgur.com/6D8DT.jpg',
-	'https://i.imgur.com/1t8cY.gif',
-	'https://i.imgur.com/2X1aU.jpg',
-	'https://i.imgur.com/1RMJ9.gif',
-	'https://i.imgur.com/5gxGm.jpg',
-	'https://i.imgur.com/Q6q4y.gif',
-	'https://i.imgur.com/5wY1Q.jpg',
-	'https://i.imgur.com/0lIYt0W.gif',
-	// Дополнительные мемные гифки/картинки
-	'https://i.imgur.com/1YcQp8E.gif',
-	'https://i.imgur.com/Gd2mW0q.gif',
-	'https://i.imgur.com/2s6yJx8.jpeg',
-	'https://i.imgur.com/5B3b2sU.gif',
-	'https://i.imgur.com/9c8z8dB.jpeg',
-	'https://i.imgur.com/0oM7xgR.gif',
-	'https://i.imgur.com/6oVdB1N.jpeg',
-	'https://i.imgur.com/PH6Q9vM.gif',
-	'https://i.imgur.com/RyU1y2S.jpeg',
-	'https://i.imgur.com/4r3mD0k.gif',
-];
+const IMAGES = [];
 
 const DUPLICATED_IMAGES = [...IMAGES, ...IMAGES, ...IMAGES];
 
@@ -89,7 +67,7 @@ function MusicPlayer() {
 
 	return (
 		<div className="music-player card">
-			<audio ref={audioRef} src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2a4bcda3a8.mp3?filename=romantic-piano-loop-100-bpm-103518.mp3" preload="auto" />
+    <audio ref={audioRef} src="" preload="auto" />
 			<div className="equalizer" aria-hidden>
 				<span></span><span></span><span></span><span></span>
 			</div>

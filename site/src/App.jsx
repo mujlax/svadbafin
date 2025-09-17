@@ -44,25 +44,40 @@ function useUserConfig() {
 	const [isRoot, setIsRoot] = React.useState(true)
 	const [photosManifest, setPhotosManifest] = React.useState(null)
 
-	React.useEffect(() => {
-		const url = new URL(window.location.href)
-		const qUser = url.searchParams.get('u')
-		const baseUrl = (import.meta.env.BASE_URL || '/').replace(/\/$/, '/')
+    React.useEffect(() => {
+        const url = new URL(window.location.href)
+        const qUser = url.searchParams.get('u')
+        const baseUrl = ((import.meta.env.BASE_URL || '/')).replace(/\/$/, '/')
 		let path = window.location.pathname
 		if (baseUrl && path.startsWith(baseUrl)) path = path.slice(baseUrl.length)
 		path = path.replace(/^\//, '')
 		if (path === '' || path === 'index.html') path = null
 		const candidate = qUser || path || 'default'
 		setIsRoot(!qUser && !path)
-			const base = import.meta.env.BASE_URL || '/'
-			Promise.all([
-				fetch(base + 'users.json').then((r) => r.json()),
-				fetch(base + 'photos-manifest.json').then((r) => r.json()).catch(() => ({})),
-			]).then(([users, manifest]) => {
+        const base = (import.meta.env.BASE_URL || '/')
+        Promise.all([
+            fetch(base + 'users.json').then((r) => r.json()),
+            fetch(base + 'photos-manifest.json').then((r) => r.json()).catch(() => ({})),
+        ]).then(([users, manifestRaw]) => {
+            const addBase = (p) => (p ? (base + String(p).replace(/^\//, '')) : p)
+            const manifest = { ...manifestRaw }
+            if (manifest.carousels) manifest.carousels = manifest.carousels.map(addBase)
+            if (manifest.podvorye) manifest.podvorye = manifest.podvorye.map(addBase)
+            if (manifest.instax) manifest.instax = manifest.instax.map(addBase)
+            if (manifest.bg_photo) manifest.bg_photo = manifest.bg_photo.map(addBase)
+            Object.keys(manifest).forEach((k) => {
+                if (['carousels','podvorye','instax'].includes(k)) return
+                const u = manifest[k]
+                if (u && typeof u === 'object') {
+                    if (u.root) u.root = u.root.map(addBase)
+                    if (u.carousel) u.carousel = u.carousel.map(addBase)
+                    if (u.music) u.music = u.music.map(addBase)
+                }
+            })
 			const uid = users[candidate] ? candidate : 'default'
 			setUserId(uid)
 			setConfig(users[uid])
-			setPhotosManifest(manifest)
+            setPhotosManifest(manifest)
 		}).catch(() => {
 			setUserId('default')
 			setConfig(null)
@@ -150,7 +165,7 @@ export default function App() {
 					<div style={{ height: 12 }} />
 					<Carousel images={carousel3} duration={46000} height={200} />
 					<div style={{ height: 16 }} />
-					<Instax photos={instaxPhotos} />
+					<Instax photos={instaxPhotos} cameraSrc={(import.meta.env.BASE_URL || '/') + 'photos/default/camera/instax.png'} />
 				</Section>
 
 				<Section title="Программа" ribbon="без очереди">
