@@ -31,9 +31,9 @@
 	</div>
 	<script>
 		(async function(){
-			const base = location.origin
+			const base = (document.querySelector('base')?.getAttribute('href')) || (window.__BASE_URL__ || (location.pathname.replace(/\/?[^/]*$/, '/')))
 			try {
-				const res = await fetch(base + '/users.json')
+				const res = await fetch(base + 'users.json')
 				const data = await res.json()
 				const users = Object.keys(data)
 				const container = document.getElementById('list')
@@ -43,10 +43,10 @@
 					el.className = 'user'
 					el.innerHTML = '<b>' + u + '</b>'
 					const a1 = document.createElement('a')
-					a1.href = base + '/?u=' + encodeURIComponent(u)
+					a1.href = base + '?u=' + encodeURIComponent(u)
 					a1.textContent = 'Параметр: ?u=' + u
 					const a2 = document.createElement('a')
-					a2.href = base + '/' + encodeURIComponent(u)
+					a2.href = base + encodeURIComponent(u)
 					a2.textContent = 'Путь: /' + u
 					el.appendChild(a1)
 					el.appendChild(a2)
