@@ -21,6 +21,37 @@
 	filter: grayscale(0.3) contrast(1.05) brightness(0.95);
 }
 
+.lightbox {
+	position: fixed;
+	inset: 0;
+	background: rgba(0,0,0,.85);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+}
+
+.lightboxMedia {
+	max-width: 92vw;
+	max-height: 92vh;
+	border: 4px solid #fff;
+	box-shadow: 0 10px 30px rgba(0,0,0,.6);
+}
+
+.lightboxClose {
+	position: fixed;
+	top: 16px;
+	right: 16px;
+	font-size: 28px;
+	line-height: 1;
+	background: #fff;
+	color: #000;
+	border: 2px solid #000;
+	box-shadow: 2px 2px 0 #000;
+	cursor: pointer;
+	padding: 4px 10px;
+}
+
 @media (max-width: 768px) {
 	.viewport img, .media { height: 140px; }
 }

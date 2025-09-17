@@ -1,4 +1,176 @@
 {
+  "Artem_And_Polina": {
+    "root": [],
+    "carousel": [
+      "/photos/Artem_And_Polina/carousel/1c8da60e-9f27-46fe-b691-99446b138202.png",
+      "/photos/Artem_And_Polina/carousel/28eec43c-98d8-4120-b508-0ad889cc47f0.png",
+      "/photos/Artem_And_Polina/carousel/photo_2025-09-17_22-50-39.jpg",
+      "/photos/Artem_And_Polina/carousel/photo_2025-09-17_22-50-51.jpg",
+      "/photos/Artem_And_Polina/carousel/photo_2025-09-17_22-50-53.jpg",
+      "/photos/Artem_And_Polina/carousel/photo_2025-09-17_22-50-57.jpg",
+      "/photos/Artem_And_Polina/carousel/photo_2025-09-17_22-51-00.jpg",
+      "/photos/Artem_And_Polina/carousel/photo_2025-09-17_22-51-03.jpg",
+      "/photos/Artem_And_Polina/carousel/photo_2025-09-17_22-51-29.jpg",
+      "/photos/Artem_And_Polina/carousel/video_2025-09-17_23-00-42.mp4"
+    ],
+    "music": [
+      "/photos/Artem_And_Polina/music/Aleksandr_Pushnojj_-_Sero-zhjoltaya_vesna_64302873.mp3"
+    ]
+  },
+  "Danya": {
+    "root": [],
+    "carousel": [
+      "/photos/Danya/carousel/950cdbcb-0850-4525-85c7-573f8b0e4d54.png",
+      "/photos/Danya/carousel/e3e96dc6-b10e-4f15-b3e3-758d0d88f78e.png",
+      "/photos/Danya/carousel/photo_1_2025-09-17_22-07-12.jpg",
+      "/photos/Danya/carousel/photo_2025-09-17_22-07-15.jpg",
+      "/photos/Danya/carousel/photo_2025-09-17_22-07-39.jpg",
+      "/photos/Danya/carousel/photo_2_2025-09-17_22-07-12.jpg",
+      "/photos/Danya/carousel/photo_3_2025-09-17_22-07-12.jpg",
+      "/photos/Danya/carousel/photo_4_2025-09-17_22-07-12.jpg",
+      "/photos/Danya/carousel/photo_5_2025-09-17_22-07-12.jpg",
+      "/photos/Danya/carousel/photo_6_2025-09-17_22-07-12.jpg",
+      "/photos/Danya/carousel/video_2025-09-17_22-16-51.mp4",
+      "/photos/Danya/carousel/video_2025-09-17_22-16-55.mp4"
+    ],
+    "music": [
+      "/photos/Danya/music/Skriptonit_-_Tancujj_sama_75812202.mp3"
+    ]
+  },
+  "Egor_and_Lisa": {
+    "root": [],
+    "carousel": [
+      "/photos/Egor_and_Lisa/carousel/54d762fc-ac8e-4ec9-99c4-c397115e3170.png",
+      "/photos/Egor_and_Lisa/carousel/7ac39035-90a0-4d52-95e6-7d0a37ead53f.png",
+      "/photos/Egor_and_Lisa/carousel/8c85d361-e6b4-4501-ab50-10cfd5ccba6f.png",
+      "/photos/Egor_and_Lisa/carousel/b4aa83ea-a35b-44e6-861c-f60b16d7a0d5.png",
+      "/photos/Egor_and_Lisa/carousel/photo_2025-09-17_22-31-26.jpg",
+      "/photos/Egor_and_Lisa/carousel/photo_2025-09-17_22-31-28.jpg",
+      "/photos/Egor_and_Lisa/carousel/photo_2025-09-17_22-31-29 (2).jpg",
+      "/photos/Egor_and_Lisa/carousel/photo_2025-09-17_22-31-29.jpg",
+      "/photos/Egor_and_Lisa/carousel/photo_2025-09-17_22-31-30.jpg",
+      "/photos/Egor_and_Lisa/carousel/photo_2025-09-17_22-31-32.jpg",
+      "/photos/Egor_and_Lisa/carousel/photo_2025-09-17_22-31-39.jpg",
+      "/photos/Egor_and_Lisa/carousel/video_2025-09-17_23-00-09.mp4",
+      "/photos/Egor_and_Lisa/carousel/video_2025-09-17_23-00-19.mp4"
+    ],
+    "music": [
+      "/photos/Egor_and_Lisa/music/Smeshariki_-_Vesti-bu-bi-lyu-bi-bu_b128f0d203.mp3"
+    ]
+  },
+  "Karina_and_Andreu": {
+    "root": [],
+    "carousel": [
+      "/photos/Karina_and_Andreu/carousel/be648a8b-c65b-4dce-a995-a6d48dbb2308.png",
+      "/photos/Karina_and_Andreu/carousel/ca23e2d3-6c01-4cb0-b85f-304d6c8a1e92.png",
+      "/photos/Karina_and_Andreu/carousel/photo_2025-09-17_22-51-33.jpg",
+      "/photos/Karina_and_Andreu/carousel/photo_2025-09-17_22-51-58.jpg",
+      "/photos/Karina_and_Andreu/carousel/photo_2025-09-17_22-52-05.jpg",
+      "/photos/Karina_and_Andreu/carousel/photo_2025-09-17_22-52-16.jpg",
+      "/photos/Karina_and_Andreu/carousel/photo_2025-09-17_22-52-19.jpg",
+      "/photos/Karina_and_Andreu/carousel/photo_2025-09-17_22-52-22.jpg",
+      "/photos/Karina_and_Andreu/carousel/video_2025-09-17_23-00-30.mp4"
+    ],
+    "music": [
+      "/photos/Karina_and_Andreu/music/pesnya_-_Glamur_blond_glamur_i_bryunetki_mne_ne_vazhno_78282974.mp3"
+    ]
+  },
+  "Matvey_and_Maksim": {
+    "root": [],
+    "carousel": [
+      "/photos/Matvey_and_Maksim/carousel/3e498b76-424a-4bff-b7ce-8adbb6e5561d.png",
+      "/photos/Matvey_and_Maksim/carousel/46ca8553-a62b-440e-a3cb-a1e6eec8d216.png",
+      "/photos/Matvey_and_Maksim/carousel/b179ecfe-e48b-4d25-a080-673e66ec2316.png",
+      "/photos/Matvey_and_Maksim/carousel/photo_2025-09-17_22-25-24.jpg",
+      "/photos/Matvey_and_Maksim/carousel/photo_2025-09-17_22-25-37.jpg",
+      "/photos/Matvey_and_Maksim/carousel/photo_2025-09-17_22-26-18.jpg",
+      "/photos/Matvey_and_Maksim/carousel/photo_2025-09-17_22-26-21.jpg",
+      "/photos/Matvey_and_Maksim/carousel/photo_2025-09-17_22-26-24.jpg",
+      "/photos/Matvey_and_Maksim/carousel/photo_2025-09-17_22-26-28.jpg",
+      "/photos/Matvey_and_Maksim/carousel/photo_2025-09-17_22-26-30.jpg",
+      "/photos/Matvey_and_Maksim/carousel/photo_2025-09-17_22-26-33.jpg",
+      "/photos/Matvey_and_Maksim/carousel/video_2025-09-17_22-45-33.mp4",
+      "/photos/Matvey_and_Maksim/carousel/video_2025-09-17_22-45-45.mp4"
+    ],
+    "music": [
+      "/photos/Matvey_and_Maksim/music/Mikhail_Krug_-_raer_48113874.mp3"
+    ]
+  },
+  "NastyaC_and_Vlad": {
+    "root": [],
+    "carousel": [
+      "/photos/NastyaC_and_Vlad/carousel/photo_2025-09-17_22-43-19.jpg",
+      "/photos/NastyaC_and_Vlad/carousel/photo_2025-09-17_22-43-27.jpg",
+      "/photos/NastyaC_and_Vlad/carousel/photo_2025-09-17_22-43-32.jpg",
+      "/photos/NastyaC_and_Vlad/carousel/photo_2025-09-17_22-43-34.jpg",
+      "/photos/NastyaC_and_Vlad/carousel/photo_2025-09-17_22-43-37.jpg"
+    ],
+    "music": [
+      "/photos/NastyaC_and_Vlad/music/Lyubje_-_Tam_za_tumanami_48106688.mp3"
+    ]
+  },
+  "Nastya_Nayanova": {
+    "root": [],
+    "carousel": [
+      "/photos/Nastya_Nayanova/carousel/30c1d0f9-7b9c-4377-9b31-5ab0a770b1f0.png",
+      "/photos/Nastya_Nayanova/carousel/4e3f0565-909b-4d3f-8145-5ba430701826.png",
+      "/photos/Nastya_Nayanova/carousel/60b1ab63-07a4-48e6-ada3-c19923ce49e8.png",
+      "/photos/Nastya_Nayanova/carousel/IMG_5411.MP4",
+      "/photos/Nastya_Nayanova/carousel/photo_2025-09-17_22-52-35.jpg",
+      "/photos/Nastya_Nayanova/carousel/photo_2025-09-17_22-52-40.jpg",
+      "/photos/Nastya_Nayanova/carousel/photo_2025-09-17_22-52-42.jpg",
+      "/photos/Nastya_Nayanova/carousel/photo_2025-09-17_22-52-46.jpg",
+      "/photos/Nastya_Nayanova/carousel/photo_2025-09-17_22-52-49.jpg",
+      "/photos/Nastya_Nayanova/carousel/photo_2025-09-17_22-52-52.jpg",
+      "/photos/Nastya_Nayanova/carousel/photo_2025-09-17_22-52-54.jpg",
+      "/photos/Nastya_Nayanova/carousel/photo_2025-09-17_22-52-57.jpg",
+      "/photos/Nastya_Nayanova/carousel/photo_2025-09-17_22-52-59.jpg",
+      "/photos/Nastya_Nayanova/carousel/video_2025-09-17_23-01-05.mp4",
+      "/photos/Nastya_Nayanova/carousel/video_2025-09-17_23-05-22.mp4"
+    ],
+    "music": [
+      "/photos/Nastya_Nayanova/music/Dj_eban_-_DJ_EBAN_Bass_64553632.mp3"
+    ]
+  },
+  "Pasha_and_Masha": {
+    "root": [],
+    "carousel": [
+      "/photos/Pasha_and_Masha/carousel/4e8d8e7c-2e85-4c28-905d-224959ce9300.png",
+      "/photos/Pasha_and_Masha/carousel/7z2IsdpbwYTBj-yLPZkg1q06CNrdGC3KxGsDcO-Br1g86K2pAE1gMv6fW2NC6n2Zj6g9U6pGJpX1bQo9rgU9UOAa.jpg",
+      "/photos/Pasha_and_Masha/carousel/a6RTYTrIM7K4p6W1_clPGvnS9ewgpfE0TAJ936r4AMZyKswQQ7GsluKciG7Oaml4tKpDrONglZupTmFTnW89b_p2.jpg",
+      "/photos/Pasha_and_Masha/carousel/e65fca23-357d-46f5-9efd-fbf02be17fe5.png",
+      "/photos/Pasha_and_Masha/carousel/gyjRV-eWJO-XMMW8lGwf9muhzK50yCmxc-fY80HUBVin35v10g9cVmi3O4HEUU5hilTsJtJf-oDCzvoE9vMYYwPx.jpg",
+      "/photos/Pasha_and_Masha/carousel/i-LS0kY9_2EDlPBB8kg2wD6sKWkBH9qgb2WebTQERhUnF2bg1TwyINXblPqFpt7KJCvd-hj7OBWCPOezumpwSN9J.jpg",
+      "/photos/Pasha_and_Masha/carousel/photo_2023-05-04_13-24-52.jpg",
+      "/photos/Pasha_and_Masha/carousel/photo_2025-07-28_21-48-54.jpg",
+      "/photos/Pasha_and_Masha/carousel/photo_2025-09-17_22-53-03.jpg",
+      "/photos/Pasha_and_Masha/carousel/photo_2025-09-17_22-53-13.jpg",
+      "/photos/Pasha_and_Masha/carousel/photo_2025-09-17_22-53-16.jpg",
+      "/photos/Pasha_and_Masha/carousel/photo_2025-09-17_23-12-52.jpg",
+      "/photos/Pasha_and_Masha/carousel/photo_2025-09-17_23-34-14.jpg",
+      "/photos/Pasha_and_Masha/carousel/q3a6yYxs9dKf3i8tKIIFAPvPS4T14vz9Sv-bvHQiXLYWrAhew9J2lsAFo1KUH4CC0vz2pAM01HA7E9P9jmmVJCQR.jpg",
+      "/photos/Pasha_and_Masha/carousel/video_2025-09-17_23-05-03.mp4",
+      "/photos/Pasha_and_Masha/carousel/video_2025-09-17_23-32-55.mp4",
+      "/photos/Pasha_and_Masha/carousel/video_2025-09-17_23-33-19.mp4",
+      "/photos/Pasha_and_Masha/carousel/video_2025-09-17_23-33-30.mp4"
+    ],
+    "music": []
+  },
+  "Vano": {
+    "root": [],
+    "carousel": [
+      "/photos/Vano/carousel/93563221-b676-4a0b-8435-9d1c8899e595.png",
+      "/photos/Vano/carousel/ad6bd3f7-455f-4417-8a0b-5c0a0af1948c.png",
+      "/photos/Vano/carousel/photo_2025-09-17_22-24-54.jpg",
+      "/photos/Vano/carousel/photo_2025-09-17_22-25-05.jpg",
+      "/photos/Vano/carousel/photo_2025-09-17_22-25-07.jpg",
+      "/photos/Vano/carousel/video_2025-09-17_22-24-16.mp4",
+      "/photos/Vano/carousel/video_2025-09-17_22-24-22.mp4"
+    ],
+    "music": [
+      "/photos/Vano/music/Hozier_-_Too_Sweet_78471261.mp3"
+    ]
+  },
   "default": {
     "root": [],
     "carousel": [],
@@ -19,6 +191,9 @@
   "vlad_and_Nastya": {
     "root": [],
     "carousel": [
+      "/photos/vlad_and_Nastya/carousel/0f5cc51b-dcf2-43e5-a7af-db5cbf8f6883.png",
+      "/photos/vlad_and_Nastya/carousel/ad055fb0-c2ad-443f-bdd5-674e149853da.png",
+      "/photos/vlad_and_Nastya/carousel/eecb6dbf-8fc8-43b9-a237-94d5f5daff71.png",
       "/photos/vlad_and_Nastya/carousel/photo_2023-04-09_13-47-28.jpg",
       "/photos/vlad_and_Nastya/carousel/photo_2023-05-17_09-51-30.jpg",
       "/photos/vlad_and_Nastya/carousel/photo_2023-08-22_21-02-40.jpg",
@@ -26,6 +201,8 @@
       "/photos/vlad_and_Nastya/carousel/photo_2023-08-26_19-59-36.jpg",
       "/photos/vlad_and_Nastya/carousel/photo_2023-12-01_19-24-37.jpg",
       "/photos/vlad_and_Nastya/carousel/video_2.mp4",
+      "/photos/vlad_and_Nastya/carousel/video_2025-09-17_23-33-03.mp4",
+      "/photos/vlad_and_Nastya/carousel/video_2025-09-17_23-33-35.mp4",
       "/photos/vlad_and_Nastya/carousel/vlad.jpg"
     ],
     "music": [
@@ -35,7 +212,6 @@
   "carousels": [
     "/photos/default/carousels/photo_2024-02-23_21-28-41.jpg",
     "/photos/default/carousels/photo_2024-03-24_12-10-33.jpg",
-    "/photos/default/carousels/photo_2024-05-19_14-37-57.jpg",
     "/photos/default/carousels/photo_2024-05-19_14-38-12.jpg",
     "/photos/default/carousels/photo_2024-05-19_14-38-36.jpg",
     "/photos/default/carousels/photo_2024-05-19_18-40-49.jpg",
@@ -43,13 +219,14 @@
     "/photos/default/carousels/photo_2024-06-22_21-43-04.jpg",
     "/photos/default/carousels/photo_2024-07-12_21-12-08.jpg",
     "/photos/default/carousels/photo_2025-01-06_13-38-21.jpg",
-    "/photos/default/carousels/photo_2025-01-08_18-53-59.jpg",
     "/photos/default/carousels/photo_2025-03-15_18-19-49.jpg",
     "/photos/default/carousels/photo_2025-03-16_17-05-23.jpg",
-    "/photos/default/carousels/photo_2025-04-14_20-45-06.jpg",
     "/photos/default/carousels/photo_2025-04-17_11-51-41.jpg",
     "/photos/default/carousels/photo_2025-04-26_13-48-39.jpg",
-    "/photos/default/carousels/photo_2025-05-03_21-32-38.jpg"
+    "/photos/default/carousels/photo_2025-09-17_22-01-52.jpg",
+    "/photos/default/carousels/photo_2025-09-17_22-01-55.jpg",
+    "/photos/default/carousels/photo_2025-09-17_22-01-57.jpg",
+    "/photos/default/carousels/photo_2025-09-17_22-29-23.jpg"
   ],
   "podvorye": [
     "/photos/default/podvorye/2c7jjnkaqtwc6046872tfw94m2rd7xwe.webp",
