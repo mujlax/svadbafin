@@ -1,0 +1,17 @@
+{
+  "name": "svadba-2",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Root package to proxy scripts to site/",
+  "scripts": {
+    "dev": "npm --prefix site run dev",
+    "build": "npm --prefix site run build",
+    "preview": "npm --prefix site run preview",
+    "lint": "npm --prefix site run lint"
+  },
+  "workspaces": [
+    "site"
+  ]
+}
+
+

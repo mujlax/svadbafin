@@ -4,12 +4,17 @@
 	background: #000;
 	padding: 8px;
 	overflow: hidden;
+    cursor: grab;
 }
 
 .track {
 	display: inline-flex;
 	gap: 8px;
 	white-space: nowrap;
+}
+
+.viewport[data-dragging="1"] {
+	cursor: grabbing;
 }
 
 .viewport img, .media {

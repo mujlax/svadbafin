@@ -8,6 +8,11 @@ export default function Carousel({ images, duration = 30000, reverse = false, he
 	const rafRef = React.useRef(0)
 	const prevTimeRef = React.useRef(0)
 	const posRef = React.useRef(0)
+    const isDraggingRef = React.useRef(false)
+    const dragStartXRef = React.useRef(0)
+    const dragStartPosRef = React.useRef(0)
+    const didDragRef = React.useRef(false)
+    const [isDraggingUi, setIsDraggingUi] = React.useState(false)
     // Фиксированная скорость для каждого экземпляра карусели (слегка случайная)
     const fixedSpeedRef = React.useRef(null)
     const [lightbox, setLightbox] = React.useState({ src: '', isVideo: false })
@@ -29,21 +34,56 @@ export default function Carousel({ images, duration = 30000, reverse = false, he
 		// Ширина одного цикла = сумма ширин первого набора медиа
 		let cycle = 0
 		const children = Array.from(track.children)
-        const setSize = Math.min(children.length, images.length * REPEATS)
+		// Берём ширину только ПЕРВОГО набора изображений (без повторов),
+		// чтобы сброс происходил после показа всех уникальных фото один раз.
+		const setSize = Math.min(children.length, images.length)
 		for (let i = 0; i < setSize && i < children.length; i += 1) {
-			cycle += children[i].getBoundingClientRect().width + 8 /* gap */
+			const w = children[i].getBoundingClientRect().width
+			if (w) cycle += w + 8 /* gap */
 		}
 		if (cycle > 0) cycle -= 8
-		cycleWidthRef.current = Math.max(1, cycle)
-		posRef.current = reverse ? (cycleWidthRef.current - 1) : 0
+		// Если медиа ещё не отрисованы и ширина 0 — не затираем валидное значение
+		if (cycle > 0) {
+			cycleWidthRef.current = Math.max(1, cycle)
+			posRef.current = reverse ? (cycleWidthRef.current - 1) : 0
+		}
     }, [images, reverse])
 
 	React.useEffect(() => {
 		measure()
 		const onResize = () => measure()
 		window.addEventListener('resize', onResize)
-		return () => window.removeEventListener('resize', onResize)
-	}, [measure])
+		// Пересчёт после загрузки изображений/видео
+		const track = trackRef.current
+		const media = track ? Array.from(track.querySelectorAll('img, video')) : []
+		const imgHandlers = []
+		media.forEach((el) => {
+			if (el.tagName === 'IMG') {
+				const handler = () => measure()
+				el.addEventListener('load', handler)
+				imgHandlers.push([el, handler])
+			} else if (el.tagName === 'VIDEO') {
+				const handler = () => measure()
+				el.addEventListener('loadedmetadata', handler)
+				imgHandlers.push([el, handler])
+			}
+		})
+		// Наблюдаем изменения размеров контейнера и детей
+		let resizeObs
+		if (window.ResizeObserver && track) {
+			resizeObs = new ResizeObserver(() => measure())
+			resizeObs.observe(track)
+			Array.from(track.children).forEach((child) => resizeObs.observe(child))
+		}
+		return () => {
+			window.removeEventListener('resize', onResize)
+			imgHandlers.forEach(([el, h]) => {
+				el.removeEventListener('load', h)
+				el.removeEventListener('loadedmetadata', h)
+			})
+			if (resizeObs) resizeObs.disconnect()
+		}
+	}, [measure, images])
 
 	React.useEffect(() => {
 		const track = trackRef.current
@@ -62,8 +102,11 @@ export default function Carousel({ images, duration = 30000, reverse = false, he
 			// Фиксированная скорость: либо из пропса, либо заранее выбранная для экземпляра
 			let speed = computedSpeed ?? fixedSpeedRef.current
 			const dir = reverse ? -1 : 1
-			posRef.current = (posRef.current + dir * speed * dt) % cycle
-			if (posRef.current < 0) posRef.current += cycle
+			// Во время перетаскивания отключаем авто-прокрутку
+			if (!isDraggingRef.current) {
+				posRef.current = (posRef.current + dir * speed * dt) % cycle
+				if (posRef.current < 0) posRef.current += cycle
+			}
 			track.style.transform = `translateX(${-posRef.current}px)`
 			rafRef.current = requestAnimationFrame(loop)
 		}
@@ -73,6 +116,42 @@ export default function Carousel({ images, duration = 30000, reverse = false, he
 			prevTimeRef.current = 0
 		}
 	}, [duration, reverse, computedSpeed, images])
+
+    // Обработчики перетаскивания/свайпа
+    const onPointerDown = React.useCallback((e) => {
+        if (e.button !== 0 && e.pointerType === 'mouse') return
+        const cycle = cycleWidthRef.current
+        if (cycle <= 1) return
+        isDraggingRef.current = true
+        didDragRef.current = false
+        dragStartXRef.current = e.clientX
+        dragStartPosRef.current = posRef.current
+        setIsDraggingUi(true)
+        e.currentTarget.setPointerCapture?.(e.pointerId)
+        e.preventDefault()
+        e.stopPropagation()
+    }, [])
+
+    const onPointerMove = React.useCallback((e) => {
+        if (!isDraggingRef.current) return
+        const cycle = cycleWidthRef.current
+        if (cycle <= 1) return
+        const dx = e.clientX - dragStartXRef.current
+        if (Math.abs(dx) > 4) didDragRef.current = true
+        let next = (dragStartPosRef.current - dx) % cycle
+        if (next < 0) next += cycle
+        posRef.current = next
+        const track = trackRef.current
+        if (track) track.style.transform = `translateX(${-posRef.current}px)`
+        e.preventDefault()
+    }, [])
+
+    const onPointerUp = React.useCallback((e) => {
+        if (!isDraggingRef.current) return
+        isDraggingRef.current = false
+        setIsDraggingUi(false)
+        e.preventDefault()
+    }, [])
 
 	// Закрытие модалки по ESC
     React.useEffect(() => {
@@ -100,7 +179,14 @@ const repeated = React.useMemo(() => {
 }, [images])
 
 	return (
-		<div className={styles.viewport} style={{ height: height + 16 }}>
+		<div className={styles.viewport} style={{ height: height + 16 }}
+			onPointerDown={onPointerDown}
+			onPointerMove={onPointerMove}
+			onPointerUp={onPointerUp}
+			onPointerCancel={onPointerUp}
+			onTouchStart={(e) => e.preventDefault()}
+			data-dragging={isDraggingUi ? '1' : '0'}
+		>
 			<div className={styles.track} ref={trackRef}>
 				{repeated.map((it, idx) => (
 					isVideo(it.src) ? (
