@@ -12,7 +12,9 @@ export default function Carousel({ images, duration = 30000, reverse = false, he
     const dragStartXRef = React.useRef(0)
     const dragStartPosRef = React.useRef(0)
     const didDragRef = React.useRef(false)
+    const dragActivatedRef = React.useRef(false)
     const [isDraggingUi, setIsDraggingUi] = React.useState(false)
+    const DRAG_THRESHOLD_PX = 14
     // Фиксированная скорость для каждого экземпляра карусели (слегка случайная)
     const fixedSpeedRef = React.useRef(null)
     const [lightbox, setLightbox] = React.useState({ src: '', isVideo: false })
@@ -119,17 +121,17 @@ export default function Carousel({ images, duration = 30000, reverse = false, he
 
     // Обработчики перетаскивания/свайпа
     const onPointerDown = React.useCallback((e) => {
+        // Не начинаем перетаскивание, если открыт лайтбокс
+        if (lightbox.src) return
         if (e.button !== 0 && e.pointerType === 'mouse') return
         const cycle = cycleWidthRef.current
         if (cycle <= 1) return
         isDraggingRef.current = true
         didDragRef.current = false
+        dragActivatedRef.current = false
         dragStartXRef.current = e.clientX
         dragStartPosRef.current = posRef.current
-        setIsDraggingUi(true)
-        e.currentTarget.setPointerCapture?.(e.pointerId)
-        e.preventDefault()
-        e.stopPropagation()
+        setIsDraggingUi(false)
     }, [])
 
     const onPointerMove = React.useCallback((e) => {
@@ -137,7 +139,17 @@ export default function Carousel({ images, duration = 30000, reverse = false, he
         const cycle = cycleWidthRef.current
         if (cycle <= 1) return
         const dx = e.clientX - dragStartXRef.current
-        if (Math.abs(dx) > 4) didDragRef.current = true
+        if (!dragActivatedRef.current) {
+            if (Math.abs(dx) >= DRAG_THRESHOLD_PX) {
+                dragActivatedRef.current = true
+                didDragRef.current = true
+                setIsDraggingUi(true)
+                e.currentTarget.setPointerCapture?.(e.pointerId)
+            } else {
+                // игнорируем мелкие дрожания пальца/мыши
+                return
+            }
+        }
         let next = (dragStartPosRef.current - dx) % cycle
         if (next < 0) next += cycle
         posRef.current = next
@@ -150,7 +162,16 @@ export default function Carousel({ images, duration = 30000, reverse = false, he
         if (!isDraggingRef.current) return
         isDraggingRef.current = false
         setIsDraggingUi(false)
+        dragActivatedRef.current = false
         e.preventDefault()
+    }, [])
+
+    // Гасим клик, если до этого было перетаскивание, чтобы не открывался лайтбокс случайно
+    const onClickCapture = React.useCallback((e) => {
+        if (!didDragRef.current) return
+        didDragRef.current = false
+        e.preventDefault()
+        e.stopPropagation()
     }, [])
 
 	// Закрытие модалки по ESC
@@ -184,17 +205,18 @@ const repeated = React.useMemo(() => {
 			onPointerMove={onPointerMove}
 			onPointerUp={onPointerUp}
 			onPointerCancel={onPointerUp}
-			onTouchStart={(e) => e.preventDefault()}
+			onClickCapture={onClickCapture}
+			onDragStart={(e) => e.preventDefault()}
 			data-dragging={isDraggingUi ? '1' : '0'}
 		>
 			<div className={styles.track} ref={trackRef}>
 				{repeated.map((it, idx) => (
 					isVideo(it.src) ? (
-                    <video key={it.key} className={styles.media} style={{ height, cursor: 'zoom-in' }} autoPlay muted loop playsInline preload="metadata" onClick={() => setLightbox({ src: it.src, isVideo: true })}>
+					<video key={it.key} className={styles.media} style={{ height, cursor: 'zoom-in' }} autoPlay muted loop playsInline preload="metadata" onClick={() => setLightbox({ src: it.src, isVideo: true })} draggable={false} onDragStart={(e) => e.preventDefault()}>
                         <source src={it.src} type="video/mp4" />
                     </video>
 					) : (
-                    <img src={it.src} alt={`nostalgia-${idx}`} key={it.key} style={{ height, cursor: 'zoom-in' }} onClick={() => setLightbox({ src: it.src, isVideo: false })} />
+					<img src={it.src} alt={`nostalgia-${idx}`} key={it.key} style={{ height, cursor: 'zoom-in' }} onClick={() => setLightbox({ src: it.src, isVideo: false })} draggable={false} onDragStart={(e) => e.preventDefault()} />
 					)
 				))}
                 {lightbox.src && createPortal(
