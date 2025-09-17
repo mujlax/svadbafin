@@ -47,10 +47,13 @@ function useUserConfig() {
 	React.useEffect(() => {
 		const url = new URL(window.location.href)
 		const qUser = url.searchParams.get('u')
-		let pathUser = window.location.pathname.replace(/^\//, '')
-		if (pathUser === '' || pathUser === 'index.html') pathUser = null
-		const candidate = qUser || pathUser || 'default'
-		setIsRoot(!qUser && !pathUser)
+		const baseUrl = (import.meta.env.BASE_URL || '/').replace(/\/$/, '/')
+		let path = window.location.pathname
+		if (baseUrl && path.startsWith(baseUrl)) path = path.slice(baseUrl.length)
+		path = path.replace(/^\//, '')
+		if (path === '' || path === 'index.html') path = null
+		const candidate = qUser || path || 'default'
+		setIsRoot(!qUser && !path)
 			const base = import.meta.env.BASE_URL || '/'
 			Promise.all([
 				fetch(base + 'users.json').then((r) => r.json()),
