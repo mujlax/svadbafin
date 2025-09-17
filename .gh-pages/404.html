@@ -8,10 +8,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/svadbafin/assets/index-DaCa-D4c.js"></script>
+    <script type="module" crossorigin src="/svadbafin/assets/index-Cb2UhHwP.js"></script>
     <link rel="stylesheet" crossorigin href="/svadbafin/assets/index-40bQfTDI.css">
   </head>
   <body>
+    <script>
+      (function(){
+        try {
+          var search = location.search || ''
+          var path = location.pathname || '/'
+          var base = path.replace(/[^/]*$/, '/')
+          var hasU = /(?:^|[?&])u=/.test(search)
+          var isUsers = /\/users\.html$/.test(path)
+          var rest = path.slice(base.length)
+          var hasUserPath = rest && rest !== 'index.html' && rest !== 'users.html'
+          var skip = /[?&]noUsers=1/.test(search)
+          if (!skip && !isUsers && !hasU && !hasUserPath) {
+            var target = base + 'users.html' + search + (location.hash || '')
+            location.replace(target)
+          }
+        } catch(e) {}
+      })();
+    </script>
     <div id="root"></div>
   </body>
 </html>
