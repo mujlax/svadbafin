@@ -51,10 +51,11 @@ function useUserConfig() {
 		if (pathUser === '' || pathUser === 'index.html') pathUser = null
 		const candidate = qUser || pathUser || 'default'
 		setIsRoot(!qUser && !pathUser)
-		Promise.all([
-			fetch('/users.json').then((r) => r.json()),
-			fetch('/photos-manifest.json').then((r) => r.json()).catch(() => ({})),
-		]).then(([users, manifest]) => {
+			const base = import.meta.env.BASE_URL || '/'
+			Promise.all([
+				fetch(base + 'users.json').then((r) => r.json()),
+				fetch(base + 'photos-manifest.json').then((r) => r.json()).catch(() => ({})),
+			]).then(([users, manifest]) => {
 			const uid = users[candidate] ? candidate : 'default'
 			setUserId(uid)
 			setConfig(users[uid])

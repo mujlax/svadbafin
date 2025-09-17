@@ -5,7 +5,8 @@ export default function UsersDirectory() {
 	const [users, setUsers] = React.useState([])
 	const [error, setError] = React.useState('')
 	React.useEffect(() => {
-		fetch('/users.json')
+        const base = import.meta.env.BASE_URL || '/'
+        fetch(`${base}users.json`)
 			.then((r) => r.json())
 			.then((data) => setUsers(Object.keys(data)))
 			.catch(() => setError('Не удалось загрузить users.json'))
@@ -18,11 +19,11 @@ export default function UsersDirectory() {
 					<div>{error}</div>
 				) : (
 					<div className={styles.list}>
-						{users.map((u) => (
+                        {users.map((u) => (
 							<div key={u} className={styles.user}>
 								<b>{u}</b>
-								<a href={`/?u=${encodeURIComponent(u)}`}>Параметр: ?u={u}</a>
-								<a href={`/${encodeURIComponent(u)}`}>Путь: /{u}</a>
+                                <a href={`${import.meta.env.BASE_URL}?u=${encodeURIComponent(u)}`}>Параметр: ?u={u}</a>
+                                <a href={`${import.meta.env.BASE_URL}${encodeURIComponent(u)}`}>Путь: /{u}</a>
 							</div>
 						))}
 					</div>
