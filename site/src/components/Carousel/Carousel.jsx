@@ -82,7 +82,9 @@ export default function Carousel({ images, duration = 30000, reverse = false, he
 			<div className={styles.track} ref={trackRef}>
 				{repeated.map((it, idx) => (
 					isVideo(it.src) ? (
-						<video key={it.key} src={it.src} className={styles.media} style={{ height }} autoPlay muted loop playsInline />
+						<video key={it.key} className={styles.media} style={{ height }} autoPlay muted loop playsInline preload="metadata">
+							<source src={it.src} type="video/mp4" />
+						</video>
 					) : (
 						<img src={it.src} alt={`nostalgia-${idx}`} key={it.key} style={{ height }} />
 					)
