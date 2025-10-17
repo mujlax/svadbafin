@@ -11,6 +11,7 @@ import BackgroundPhotos from './components/Effects/BackgroundPhotos.jsx'
 import UsersDirectory from './components/UsersDirectory/UsersDirectory.jsx'
 import Instax from './components/Instax/Instax.jsx'
 import Countdown from './components/Countdown/Countdown.jsx'
+import DoodleJump from './components/DoodleJump/DoodleJump.jsx'
 import styles from './App.module.css'
 
 const IMAGES = [
@@ -91,6 +92,14 @@ function useUserConfig() {
 export default function App() {
 	const { userId, config, isRoot, photosManifest } = useUserConfig()
 
+	// Reveal DoodleJump only after 18.10.2025 15:30 MSK (12:30 UTC), or if forced via secret button
+	const [forceDJ, setForceDJ] = React.useState(false)
+	React.useEffect(() => {
+		try { if (localStorage.getItem('dj_dev_show_game') === '1') setForceDJ(true) } catch {}
+	}, [])
+	const revealAtUtc = Date.parse('2025-10-18T12:30:00Z')
+	const showDJ = forceDJ || (Date.now() >= revealAtUtc)
+
 	if (isRoot) {
 		return (
 			<>
@@ -127,7 +136,8 @@ export default function App() {
 				<CursorStars />
 				<FallingStars />
 				<BackgroundPhotos images={photosManifest?.bg_photo || []} />
-				<HeaderMarquee />
+			<HeaderMarquee />
+			{showDJ && <DoodleJump height={220} emoji={'🐸'} />}
 				<div className={styles.container}>
 				<Section title={`Свадьба века: Денис ❤︎ Аня${userId !== 'default' ? '  '  : ''}`} ribbon={ribbonTop}>
 					<p>
@@ -212,6 +222,8 @@ export default function App() {
 					<p>© 2003—2026, все права защищены ковром.</p>
 				</div>
 			</div>
+			{/* Secret debug button to force-show the game */}
+			<button onClick={() => { try { localStorage.setItem('dj_dev_show_game','1') } catch {}; setForceDJ(true) }} title="." aria-label="." style={{ position:'fixed', left:6, bottom:6, width:50, height:50, opacity:.05, border:'1px solid transparent', background:'#000', padding:0 }} />
 			<Popup />
 		</>
 	)
